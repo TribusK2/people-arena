@@ -1,0 +1,11 @@
+{
+  "message": "ok",
+  "result": {
+    "description": "A person within the Star Wars universe",
+    "properties": {
+      "mass": "136",
+      "name": "Darth Vader"
+    },
+    "uid": "4"
+  }
+}

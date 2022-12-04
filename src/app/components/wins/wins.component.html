@@ -1,0 +1,10 @@
+<div *ngIf="userWins$ | async as userWins" class="wins">
+  <div class="wins__result">{{userWins.winA}}</div>
+  <div class="wins__nav">
+    <div class="wins__title">WINS</div>
+    <button mat-icon-button (click)="resetWins()" aria-label="Refresh results">
+      <mat-icon>loop</mat-icon>
+    </button>
+  </div>
+  <div class="wins__result">{{userWins.winB}}</div>
+</div>

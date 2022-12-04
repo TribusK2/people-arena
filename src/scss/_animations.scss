@@ -1,0 +1,71 @@
+@import 'variables';
+
+@keyframes cardBackUp {
+  0% {
+    transform: perspective($card-rotate-perspective) rotateY(90deg);
+  }
+
+  50% {
+    transform: perspective($card-rotate-perspective) rotateY(90deg);
+  }
+
+  100% {
+    transform: perspective($card-rotate-perspective) rotateY(0deg);
+  }
+}
+
+@keyframes cardBackDown {
+  0% {
+    transform: perspective($card-rotate-perspective) rotateY(0deg);
+  }
+
+  50% {
+    transform: perspective($card-rotate-perspective) rotateY(90deg);
+  }
+
+  100% {
+    transform: perspective($card-rotate-perspective) rotateY(90deg);
+  }
+}
+
+@keyframes cardFrontUp {
+  0% {
+    transform: perspective($card-rotate-perspective) rotateY(-90deg);
+  }
+
+  50% {
+    transform: perspective($card-rotate-perspective) rotateY(-90deg);
+  }
+
+  100% {
+    transform: perspective($card-rotate-perspective) rotateY(0deg);
+  }
+}
+
+@keyframes cardFrontDown {
+  0% {
+    transform: perspective($card-rotate-perspective) rotateY(0deg);
+  }
+
+  50% {
+    transform: perspective($card-rotate-perspective) rotateY(-90deg);
+  }
+
+  100% {
+    transform: perspective($card-rotate-perspective) rotateY(-90deg);
+  }
+}
+
+@keyframes resultShow {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

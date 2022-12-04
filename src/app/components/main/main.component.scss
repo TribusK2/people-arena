@@ -1,0 +1,139 @@
+@import 'colors';
+@import 'variables';
+@import 'animations';
+@import 'functions';
+
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__header {
+    display: flex;
+    background-color: $main-color;
+    margin: 0;
+    min-height: 60px;
+    align-items: center;
+    justify-content: center;
+
+    &__title {
+      margin: 0;
+      font-weight: bold;
+    }
+  }
+
+  &__playground {
+    min-height: 300px;
+    background-image: linear-gradient(45deg, getBgColor($user-a-main-color), getBgColor($user-b-main-color)), url('/assets/images/corridor.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__footer {
+    background-color: $second-color;
+    text-align: center;
+    color: $light-text-color;
+    padding: 2px;
+    font-size: 12px;
+  }
+}
+
+.actionsFiled {
+  min-height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cardsField {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-grow: 1;
+  position: relative;
+
+  &__divider {
+    font-size: 40px;
+    color: $user-a-main-color;
+    font-weight: bold;
+    text-shadow: textStroke($user-b-main-color, 2px);
+  }
+
+  &__card {
+    height: 360px;
+    width: 240px;
+    position: relative;
+  }
+}
+
+.cardFront {
+  height: 100%;
+  animation-duration: $card-rotate-time;
+  transform: perspective(800px);
+  animation-timing-function: ease-in-out;
+
+  &__hiden {
+    animation-name: cardFrontDown;
+    transform: rotateY(90deg);
+  }
+
+  &__show {
+    animation-name: cardFrontUp;
+    transform: rotateY(0deg);
+  }
+
+  &__transparent {
+    opacity: 0;
+  }
+}
+
+.cardBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  animation-duration: $card-rotate-time;
+  transform: perspective(800px);
+  animation-timing-function: ease-in-out;
+
+  &__hiden {
+    animation-name: cardBackDown;
+    transform: rotateY(90deg);
+  }
+
+  &__show {
+    animation-name: cardBackUp;
+    transform: rotateY(0deg);
+  }
+}
+
+.fightResult {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: resultShow;
+  animation-timing-function: ease-in-out;
+  animation-duration: calc($card-rotate-time*2);
+  z-index: 20;
+
+  &__text {
+    padding-bottom: 180px;
+    font-size: 60px;
+    line-height: 80px;
+    text-align: center;
+    font-weight: bold;
+    color: $result-color;
+    text-shadow: textStroke($user-a-main-color, 2px);
+  }
+}

@@ -1,0 +1,12 @@
+@import 'colors';
+
+.spinnerCover {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 999;
+  background-color: $spinner-bg-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

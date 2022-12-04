@@ -1,0 +1,15 @@
+<mat-card class="fighterCard">
+  <ng-container *ngIf="fighterWithAvatar$ | async as fighterWithAvatar">
+    <mat-card-header>
+      <mat-card-title>
+        <div>{{fighterWithAvatar.fighter.properties.name}}</div>
+      </mat-card-title>
+    </mat-card-header>
+    <img class="fighterImg" [src]="fighterWithAvatar.avatarUrl" alt="user_avatar">
+    <mat-card-content>
+      <div class="fighterParams">
+        Weight: {{fighterWithAvatar.fighter.properties.mass}}
+      </div>
+    </mat-card-content>
+  </ng-container>
+</mat-card>

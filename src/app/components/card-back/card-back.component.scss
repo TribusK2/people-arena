@@ -1,0 +1,20 @@
+@import 'colors';
+@import 'variables';
+
+@function getCardColor($color) {
+  @return transparentize(darken($color, 35), 0.1);
+}
+
+.cardBack {
+  height: 100%;
+  width: 100%;
+  border-radius: $card-radius;
+
+  &__userA {
+    background-image: url('/assets/images/card_back.png'), radial-gradient($user-a-main-color, black);
+  }
+
+  &__userB {
+    background-image: url('/assets/images/card_back.png'), radial-gradient($user-b-main-color, black);
+  }
+}

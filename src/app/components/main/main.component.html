@@ -1,0 +1,48 @@
+<div class="main">
+
+  <header class="main__header">
+    <h1 class="main__header__title">Skull Arena</h1>
+  </header>
+
+  <main class="main__playground">
+
+    <div class="actionsFiled">
+      <button mat-raised-button (click)="drawFighters()">DRAW FIGHTERS</button>
+      <app-wins></app-wins>
+    </div>
+
+    <div class="cardsField">
+      <div *ngIf="fightResult$ | async as fightResult" class="fightResult">
+        <div class="fightResult__text">{{fightResult}}</div>
+      </div>
+
+      <div class="cardsField__card">
+        <div [ngClass]="{'cardFront__hiden': !cardAUp, 'cardFront__show': cardAUp, 'cardFront__transparent': !areFighters}"
+             class="cardFront">
+          <app-card [userMark]="UserMark.A"></app-card>
+        </div>
+        <app-card-back [ngClass]="{'cardBack__hiden': cardAUp, 'cardBack__show': !cardAUp}"
+                       class="cardBack"
+                       [userMark]="UserMark.A"
+                       (cardClick)="onCardBackClick($event)">
+        </app-card-back>
+      </div>
+
+      <div class="cardsField__divider">VS.</div>
+
+      <div class="cardsField__card">
+        <div [ngClass]="{'cardFront__hiden': !cardBUp, 'cardFront__show': cardBUp, 'cardFront__transparent': !areFighters}"
+             class="cardFront">
+          <app-card [userMark]="UserMark.B"></app-card>
+        </div>
+        <app-card-back [ngClass]="{'cardBack__hiden': cardBUp, 'cardBack__show': !cardBUp}"
+                       class="cardBack"
+                       [userMark]="UserMark.B"
+                       (cardClick)="onCardBackClick($event)">
+        </app-card-back>
+      </div>
+    </div>
+
+  </main>
+  <footer class="main__footer">&copy;2022 Krzysztof Rytlewski</footer>
+</div>
